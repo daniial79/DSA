@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSA.Playground", "DSA.Playground\DSA.Playground.csproj", "{11E95AD6-3156-4584-8DA1-1E6E46A65813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSA.DataStructures", "DSA.DataStructures\DSA.DataStructures.csproj", "{13B4E749-3D25-45CD-AC9F-4F6F0EEDEABE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSA.Algorithms", "DSA.Algorithms\DSA.Algorithms.csproj", "{5029F688-DCA2-4772-8C52-2EDDE58EBEBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11E95AD6-3156-4584-8DA1-1E6E46A65813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11E95AD6-3156-4584-8DA1-1E6E46A65813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11E95AD6-3156-4584-8DA1-1E6E46A65813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11E95AD6-3156-4584-8DA1-1E6E46A65813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13B4E749-3D25-45CD-AC9F-4F6F0EEDEABE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13B4E749-3D25-45CD-AC9F-4F6F0EEDEABE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13B4E749-3D25-45CD-AC9F-4F6F0EEDEABE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13B4E749-3D25-45CD-AC9F-4F6F0EEDEABE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5029F688-DCA2-4772-8C52-2EDDE58EBEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5029F688-DCA2-4772-8C52-2EDDE58EBEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5029F688-DCA2-4772-8C52-2EDDE58EBEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5029F688-DCA2-4772-8C52-2EDDE58EBEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
