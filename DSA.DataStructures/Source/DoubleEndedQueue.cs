@@ -4,16 +4,13 @@ namespace DSA.DataStructures;
 public class DeQueue
 {
     public List<int> Storage { get; private set; }
+    public bool IsEmpty => Storage.Count == 0;
 
     public DeQueue()
     {
         Storage = new List<int>();
     }
 
-    public bool IsEmpty()
-    {
-        return Storage.Count == 0;
-    }
 
     public void AddFirst(int value)
     {
@@ -27,7 +24,7 @@ public class DeQueue
 
     public int RemoveFirst()
     {
-        if (IsEmpty())
+        if (IsEmpty)
             throw new Exception("queue is empty");
 
         int first = Storage[0];
@@ -37,7 +34,7 @@ public class DeQueue
 
     public int RemoveLast()
     {
-        if (IsEmpty())
+        if (IsEmpty)
             throw new Exception("queue is empty");
 
 
@@ -49,7 +46,7 @@ public class DeQueue
 
     public int First()
     {
-        if (IsEmpty())
+        if (IsEmpty)
             throw new Exception("queue is empty");
 
         return Storage[0];
@@ -57,7 +54,7 @@ public class DeQueue
 
     public int Last()
     {
-        if (IsEmpty())
+        if (IsEmpty)
             throw new Exception("queue is empty");
 
         return Storage[Storage.Count - 1];
