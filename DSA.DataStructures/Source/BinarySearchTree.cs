@@ -12,10 +12,11 @@ public class BinarySearchTree
 
     public bool IterativeSearch(int value)
     {
-        if (Root == null)
+        TreeNode? temp = Root;
+
+        if (temp == null)
             return false;
 
-        TreeNode temp = Root;
         while (temp != null)
         {
             if (temp.Data == value)
@@ -91,5 +92,37 @@ public class BinarySearchTree
 
         return troot;
     }
+
+    public static void InorderTraverse(TreeNode? troot, List<int> container)
+    {
+        if (troot != null)
+        {
+            InorderTraverse(troot.Left, container);
+            container.Add(troot.Data);
+            InorderTraverse(troot.Right, container);
+        }
+    }
+
+    public static void PreorderTraverse(TreeNode? troot, List<int> container)
+    {
+        if (troot != null)
+        {
+            container.Add(troot.Data);
+            PreorderTraverse(troot.Left, container);
+            PreorderTraverse(troot.Right, container);
+        }
+    }
+
+
+    public static void PostorderTraverse(TreeNode? troot, List<int> container)
+    {
+        if (troot != null)
+        {
+            PostorderTraverse(troot.Left, container);
+            PostorderTraverse(troot.Right, container);
+            container.Add(troot.Data);
+        }
+    }
+
 
 }
