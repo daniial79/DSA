@@ -1,10 +1,10 @@
 namespace DSA.Algorithms;
 
 
-public class Searching<T> where T : IComparable<T>
+public abstract class Searching<T> where T : IComparable<T>
 {
 
-    public int linearSearch(List<T> list, T value)
+    public int LinearSearch(List<T> list, T value)
     {
         for (int i = 0; i < list.Count; i++)
         {
@@ -17,7 +17,7 @@ public class Searching<T> where T : IComparable<T>
         return -1;
     }
 
-    public int binarySearchIterative(List<T> data, T value)
+    public int BinarySearchIterative(List<T> data, T value)
     {
         int first = 0;
         int last = data.Count - 1;
@@ -47,7 +47,7 @@ public class Searching<T> where T : IComparable<T>
     }
 
 
-    public int binarySearchRecursive(List<T> data, T value, int left, int right)
+    public int BinarySearchRecursive(List<T> data, T value, int left, int right)
     {
 
 
@@ -76,5 +76,5 @@ public class Searching<T> where T : IComparable<T>
         }
 
         return result;
-    }           
+    }      
 }

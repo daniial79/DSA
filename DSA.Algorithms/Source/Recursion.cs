@@ -1,9 +1,9 @@
 ﻿namespace DSA.Algorithms;
 
-public class Recursion
+public abstract class Recursion
 {
 
-    public void calculateIterative(int number)
+    public void CalculateIterative(int number)
     {
         for (int i = number; i > 1; i--)
         {
@@ -11,48 +11,48 @@ public class Recursion
         }
     }
 
-    public void calculateRecursive(int number)
+    public void CalculateRecursive(int number)
     {
         if (number > 0)
         {
             Console.WriteLine(number * number);
-            calculateRecursive(number - 1);
+            CalculateRecursive(number - 1);
         }
     }
 
 
-    public void calculateHead(int n)
+    public void CalculateHead(int n)
     {
         if (n > 0)
         {
-            calculateHead(n - 1);
+            CalculateHead(n - 1);
             int k = n * n;
             Console.WriteLine(k);
         }
     }
 
-    public void calculateTail(int n)
+    public void CalculateTail(int n)
     {
         if (n > 0)
         {
             int k = n * n;
             Console.WriteLine(k);
-            calculateTail(k);
+            CalculateTail(k);
         }
     }
 
-    public void calculateTree(int n)
+    public void CalculateTree(int n)
     {
         if (n > 0)
         {
-            calculateTree(n - 1);
+            CalculateTree(n - 1);
             int k = n * n;
             Console.WriteLine(k);
-            calculateTree(n - 1);
+            CalculateTree(n - 1);
         }
     }
 
-    public int sumOfNatural(int n)
+    public int SumOfNatural(int n)
     {
         if (n == 1)
         {
@@ -62,7 +62,7 @@ public class Recursion
         return n + sumOfNatural(n - 1);
     }
 
-    public int factorial(int n)
+    public int Factorial(int n)
     {
         if (n == 0)
         {
