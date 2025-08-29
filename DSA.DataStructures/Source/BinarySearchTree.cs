@@ -66,6 +66,33 @@ public class BinarySearchTree
     }
 
 
+    public List<int> LevelOrderTraversal()
+    {
+        if (Root == null)
+            return new List<int>();
+
+        List<int> result = new List<int>();
+        TreeNode troot = Root;
+        Queue<TreeNode> que = new Queue<TreeNode>();
+
+        que.Enqueue(troot);
+
+        while (que.Count > 0)
+        {
+            troot = que.Dequeue();
+            result.Add(troot.Data);
+
+            if (troot.Left != null)
+                que.Enqueue(troot.Left);
+
+            if (troot.Right != null)
+                que.Enqueue(troot.Right);
+        }
+
+        return result;
+    }
+
+
     public static bool RecursiveSearch(TreeNode? root, int value)
     {
         if (root == null)
@@ -93,36 +120,34 @@ public class BinarySearchTree
         return troot;
     }
 
-    public static void InorderTraverse(TreeNode? troot, List<int> container)
+    public static void InorderTraversal(TreeNode? troot, List<int> container)
     {
         if (troot != null)
         {
-            InorderTraverse(troot.Left, container);
+            InorderTraversal(troot.Left, container);
             container.Add(troot.Data);
-            InorderTraverse(troot.Right, container);
+            InorderTraversal(troot.Right, container);
         }
     }
 
-    public static void PreorderTraverse(TreeNode? troot, List<int> container)
+    public static void PreorderTraversal(TreeNode? troot, List<int> container)
     {
         if (troot != null)
         {
             container.Add(troot.Data);
-            PreorderTraverse(troot.Left, container);
-            PreorderTraverse(troot.Right, container);
-        }
-    }
-
-
-    public static void PostorderTraverse(TreeNode? troot, List<int> container)
-    {
-        if (troot != null)
-        {
-            PostorderTraverse(troot.Left, container);
-            PostorderTraverse(troot.Right, container);
-            container.Add(troot.Data);
+            PreorderTraversal(troot.Left, container);
+            PreorderTraversal(troot.Right, container);
         }
     }
 
 
+    public static void PostorderTraversal(TreeNode? troot, List<int> container)
+    {
+        if (troot != null)
+        {
+            PostorderTraversal(troot.Left, container);
+            PostorderTraversal(troot.Right, container);
+            container.Add(troot.Data);
+        }
+    }
 }
