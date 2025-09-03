@@ -120,7 +120,7 @@ public class BinarySearchTree
         return troot;
     }
 
-    public static void InorderTraversal(TreeNode? troot, List<int> container)
+    public static List<int> InorderTraversal(TreeNode? troot, List<int> container)
     {
         if (troot != null)
         {
@@ -128,9 +128,11 @@ public class BinarySearchTree
             container.Add(troot.Data);
             InorderTraversal(troot.Right, container);
         }
+
+        return container;
     }
 
-    public static void PreorderTraversal(TreeNode? troot, List<int> container)
+    public static List<int> PreorderTraversal(TreeNode? troot, List<int> container)
     {
         if (troot != null)
         {
@@ -138,10 +140,12 @@ public class BinarySearchTree
             PreorderTraversal(troot.Left, container);
             PreorderTraversal(troot.Right, container);
         }
+
+        return container;
     }
 
 
-    public static void PostorderTraversal(TreeNode? troot, List<int> container)
+    public static List<int> PostorderTraversal(TreeNode? troot, List<int> container)
     {
         if (troot != null)
         {
@@ -149,5 +153,7 @@ public class BinarySearchTree
             PostorderTraversal(troot.Right, container);
             container.Add(troot.Data);
         }
+
+        return container;
     }
 }
