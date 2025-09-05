@@ -217,4 +217,21 @@ public class BinarySearchTree
 
         return container;
     }
+
+    public static int Count(TreeNode? temp)
+    {
+        if (temp == null)
+            return 0;
+
+        return Count(temp.Left) + Count(temp.Right) + 1;
+    }
+
+    public static int Height(TreeNode? temp)
+    {
+        if (temp == null)
+            return -1;
+
+
+        return Math.Max(Height(temp.Left), Height(temp.Right)) + 1;
+    }
 }
