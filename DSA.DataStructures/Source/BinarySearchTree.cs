@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 namespace DSA.DataStructures;
 
 
@@ -90,6 +92,65 @@ public class BinarySearchTree
         }
 
         return result;
+    }
+
+
+    public bool Delete(int data)
+    {
+        if (Root == null)
+            return false;
+
+        TreeNode target = Root;
+        TreeNode? targetParent = null;
+
+        while (target != null && target.Data != data)
+        {
+            targetParent = target;
+
+            if (target.Data < data)
+                target = target.Right;
+            else if (target.Data > data)
+                target = target.Left;
+        }
+
+        if (target == null)
+            return false;
+
+        if (target.Left != null && target.Right != null)
+        {
+            TreeNode largest = target.Left;
+            TreeNode largestParent = target;
+
+            while (largest.Right != null)
+            {
+                largestParent = largest;
+                largest = largest.Right;
+            }
+
+            target.Data = largest.Data;
+            target = largest;
+            targetParent = largestParent;
+        }
+
+        TreeNode? temp = null;
+        if (target.Left != null)
+            temp = target.Left;
+        else
+            temp = target.Right;
+
+        if (target == Root)
+        {
+            Root = temp;
+        }
+        else
+        {
+            if (target == targetParent.Left)
+                targetParent.Left = temp;
+            else
+                targetParent.Right = temp;
+        }
+
+        return true;
     }
 
 
