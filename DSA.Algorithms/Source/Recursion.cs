@@ -59,7 +59,7 @@ public abstract class Recursion
             return 1;
         }
 
-        return n + sumOfNatural(n - 1);
+        return n + SumOfNatural(n - 1);
     }
 
     public int Factorial(int n)
@@ -69,6 +69,6 @@ public abstract class Recursion
             return 1;
         }
 
-        return n * factorial(n - 1);
+        return n * Factorial(n - 1);
     }
 }

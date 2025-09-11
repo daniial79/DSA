@@ -67,12 +67,12 @@ public abstract class Searching<T> where T : IComparable<T>
         else if (comparisonResult < 0)
         {
             left = middle + 1;
-            result = binarySearchRecursive(data, value, left, right);
+            result = BinarySearchRecursive(data, value, left, right);
         }
         else if (comparisonResult > 0)
         {
             right = middle - 1;
-            result = binarySearchRecursive(data, value, left, right);
+            result = BinarySearchRecursive(data, value, left, right);
         }
 
         return result;
