@@ -21,6 +21,15 @@ public class Heap
     }
 
 
+    public void Display()
+    {
+        for (int i = 0; i < data.Length; i++)
+            Console.Write($"{data[i]} ");
+        Console.WriteLine();
+
+    }
+
+
     public void Insert(int value)
     {
         if (IsFull)
@@ -38,11 +47,44 @@ public class Heap
         data[heapIndex] = value;
     }
 
-    public void Display()
-    {
-        for (int i = 0; i < data.Length; i++)
-            Console.Write($"{data[i]} ");
-        Console.WriteLine();
 
+    public int Delete()
+    {
+
+        if (IsEmpty)
+            throw new Exception("Heap is empty");
+
+        int biggestData = data[1];
+
+        data[1] = data[csize];
+        data[csize] = 0;
+        csize--;
+
+        int parentIndex = 1;
+        int childIndex = parentIndex * 2;
+
+        while (childIndex <= csize)
+        {
+            if (childIndex < csize && data[childIndex] < data[childIndex + 1])
+                childIndex++;
+            
+
+            if (data[parentIndex] < data[childIndex])
+            {
+                int temp = data[parentIndex];
+                data[parentIndex] = data[childIndex];
+                data[childIndex] = temp;
+
+                parentIndex = childIndex;
+                childIndex = parentIndex * 2;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        return biggestData;
     }
+
 }

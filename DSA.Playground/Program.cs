@@ -13,21 +13,18 @@ public class Program
 
         myHeap.Insert(20);
         myHeap.Display();
-        
+
         myHeap.Insert(14);
+        myHeap.Insert(18);
         myHeap.Display();
 
-        myHeap.Insert(2);
+        myHeap.Delete();
         myHeap.Display();
 
-        myHeap.Insert(15);
-        myHeap.Display();
-
-        myHeap.Insert(200);
+        myHeap.Delete();
         myHeap.Display();
         
-        
-        
-
+        myHeap.Delete();
+        myHeap.Display();
     }
 }
