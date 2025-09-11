@@ -17,6 +17,24 @@ public class Heap
     {
         msize = maxSize;
         csize = 0;
-        data = new int[msize];
+        data = new int[msize + 1];
+    }
+
+
+    public void Insert(int value)
+    {
+        if (IsFull)
+            return;
+
+        csize++;
+        int heapIndex = csize;
+
+        while (heapIndex > 1 && value > data[heapIndex / 2])
+        {
+            data[heapIndex] = data[heapIndex / 2];
+            heapIndex = heapIndex / 2;
+        }
+
+        data[heapIndex] = value;
     }
 }
