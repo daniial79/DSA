@@ -67,7 +67,7 @@ public class Heap
         {
             if (childIndex < csize && data[childIndex] < data[childIndex + 1])
                 childIndex++;
-            
+
 
             if (data[parentIndex] < data[childIndex])
             {
@@ -87,4 +87,17 @@ public class Heap
         return biggestData;
     }
 
+    public static int[] Sort(int[] array)
+    {
+        int[] result = new int[array.Length];
+        Heap containerHeap = new Heap(array.Length);
+
+        for (int i = 0; i < array.Length; i++)
+            containerHeap.Insert(array[i]);
+
+        for (int i = array.Length - 1; i >= 0; i--)
+            result[i] = containerHeap.Delete();
+
+        return result;
+    }
 }
