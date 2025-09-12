@@ -13,6 +13,7 @@ public class Heap
     public bool IsEmpty => csize == 0;
     public bool IsFull => csize == msize;
 
+
     public Heap(int maxSize)
     {
         msize = maxSize;
@@ -86,6 +87,7 @@ public class Heap
 
         return biggestData;
     }
+
 
     public static int[] Sort(int[] array)
     {
