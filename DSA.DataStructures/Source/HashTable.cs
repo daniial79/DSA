@@ -32,8 +32,18 @@ public class HashChaining
     public bool Contains(int data)
     {
         int bucketIndex = Hash(data);
+
         LinkedList chain = buckets[bucketIndex];
-        return chain.Search(data) != -1;
+
+        Node temp = chain.Head;
+        while (temp != null && temp.Data > data)
+        {
+            if (temp.Data == data)
+                return true;
+            temp = temp.Next;
+        }
+
+        return false;
     }
 
     public void Insert(int data)
