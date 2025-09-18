@@ -10,5 +10,10 @@ public class Program
         Graph mg = new Graph(10);
 
         mg.Display();
+
+        mg.InsertEdge(3, 4);
+
+        mg.Display();
+
     }
 }
