@@ -15,7 +15,7 @@ public class Queue
         Storage.Add(value);
     }
 
-    public int Dequeue(int value)
+    public int Dequeue()
     {
         if (IsEmpty)
             throw new Exception("queue is empty");

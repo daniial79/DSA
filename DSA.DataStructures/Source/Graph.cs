@@ -51,6 +51,7 @@ public class Graph
             adjMatrix[v, u] = w;
     }
 
+
     public void RemoveEdge(int u, int v)
     {
         validateVertex(u);
@@ -77,6 +78,7 @@ public class Graph
         return vertices;
     }
 
+
     public int EdgeCount()
     {
         int count = 0;
@@ -87,6 +89,7 @@ public class Graph
 
         return isDirected ? count : count / 2;
     }
+
 
     public int OutDegree(int v)
     {
@@ -99,6 +102,7 @@ public class Graph
         return count;
     }
 
+
     public int InDegree(int v)
     {
         validateVertex(v);
@@ -110,11 +114,40 @@ public class Graph
         return count;
     }
 
+
     public int? GetWeight(int u, int v)
     {
         validateVertex(u);
         validateVertex(v);
 
         return ExistsEdge(u, v) ? adjMatrix[u, v] : null;
+    }
+
+
+    public List<int> BFS(int source)
+    {
+        int i = source;
+        bool[] visited = new bool[vertices];
+        List<int> result = new List<int>();
+        Queue<int> que = new Queue<int>();
+
+        visited[i] = true;
+        result.Add(i);
+        que.Enqueue(i);
+
+        while (que.Count != 0)
+        {
+            i = que.Dequeue();
+            for (int j = 0; j < vertices; j++)
+            {
+                if (adjMatrix[i, j].HasValue && !visited[j])
+                {
+                    result.Add(j);
+                    visited[j] = true;
+                    que.Enqueue(j);
+                }
+            }
+        }
+        return result;
     }
 }
