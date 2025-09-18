@@ -150,4 +150,22 @@ public class Graph
         }
         return result;
     }
+
+    private void DFSUtil(int source, bool[] visited, List<int> result)
+    {
+        visited[source] = true;
+        result.Add(source);
+        
+        for (int j = 0; j < vertices; j++)
+            if (adjMatrix[source, j].HasValue && !visited[j])
+                DFSUtil(j, visited, result);
+    }
+
+    public List<int> DFS(int source)
+    {
+        bool[] visited = new bool[vertices];
+        List<int> result = new List<int>();
+        DFSUtil(source, visited, result);
+        return result;
+    }
 }
