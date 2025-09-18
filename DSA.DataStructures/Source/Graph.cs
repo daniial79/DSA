@@ -40,7 +40,7 @@ public class Graph
     }
 
 
-    public void InsertEdge(int u, int v, int w = 0)
+    public void InsertEdge(int u, int v, int w = 1)
     {
         validateVertex(u);
         validateVertex(v);
